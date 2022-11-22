@@ -2,6 +2,13 @@
     <div class="container">
         <app-new-task @taskAdded="newTask"></app-new-task>
         <app-task-grid :tasks="tasks"></app-task-grid>
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <div class="alert alert-info">
+                    Info: Click on Task to complete ot!
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
