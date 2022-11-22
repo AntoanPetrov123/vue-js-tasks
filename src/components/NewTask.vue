@@ -19,6 +19,12 @@ export default {
         return {
             task: ''
         };
+    },
+    methods: {
+        createNew() {
+            this.$emit('taskAdded', this.task);
+            this.task = '';
+        }
     }
 }
 </script>

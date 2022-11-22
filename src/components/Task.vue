@@ -20,6 +20,7 @@
 
 .task {
     cursor: pointer;
+    border: 1px solid black;
 }
 
 .task:hover {
