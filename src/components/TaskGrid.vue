@@ -1,6 +1,7 @@
 <template>
     <div class="row">
-        <app-task v-for="task in tasks"> {{ task }}</app-task>
+        <!-- click.native allows us to click on component -->
+        <app-task v-for="(task, index) in tasks" @click.native="completeTask(index)"> {{ task }}</app-task>
     </div>
 </template>
 
@@ -11,6 +12,11 @@ export default {
     props: ['tasks'],
     components: {
         appTask: Task
+    },
+    methods: {
+        completeTask(index) {
+            this.$emit('taskCompleted', index);
+        }
     }
 }
 </script>

@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <app-new-task @taskAdded="newTask"></app-new-task>
-        <app-task-grid :tasks="tasks"></app-task-grid>
+        <app-task-grid :tasks="tasks" @taskCompleted="completeTask"></app-task-grid>
         <div class="row">
             <div class="col-sm-12 text-center">
                 <div class="alert alert-info">
@@ -28,6 +28,9 @@ export default {
     methods: {
         newTask(task) {
             this.tasks.push(task);
+        },
+        completeTask(index) {
+            this.tasks.splice(index, 1);
         }
     },
     components: {
