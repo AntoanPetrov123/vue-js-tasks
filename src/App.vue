@@ -2,6 +2,7 @@
     <div class="container">
         <app-new-task @taskAdded="newTask"></app-new-task>
         <app-task-grid :tasks="tasks" @taskCompleted="completeTask"></app-task-grid>
+        <app-header :taskCount="tasks.length" :maxTasks="maxTasks"></app-header>
         <div class="row">
             <div class="col-sm-12 text-center">
                 <div class="alert alert-info">
@@ -15,6 +16,7 @@
 <script>
 import TaskGrid from './components/TaskGrid.vue';
 import NewTask from './components/NewTask.vue';
+import Header from './components/Header.vue';
 
 export default {
     data: function () {
@@ -22,7 +24,7 @@ export default {
             tasks: [
                 'Just task to do!'
             ],
-            maxTasks: 10
+            maxTasks: 12
         }
     },
     methods: {
@@ -35,7 +37,8 @@ export default {
     },
     components: {
         appTaskGrid: TaskGrid,
-        appNewTask: NewTask
+        appNewTask: NewTask,
+        appHeader: Header
     }
 }
 </script>
