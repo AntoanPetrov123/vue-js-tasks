@@ -29,6 +29,9 @@ export default {
     },
     methods: {
         newTask(task) {
+            if (this.tasks.length >= this.maxTasks) {
+                return alert('Please complete or delete task first!')
+            }
             this.tasks.push(task);
         },
         completeTask(index) {
